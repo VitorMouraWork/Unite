@@ -1,6 +1,8 @@
+import Form from '@components/Form';
+
 const Home = () => {
   return (
-    <div>Welcome to Unite</div>
+      <Form></Form>
   )
 }
 
