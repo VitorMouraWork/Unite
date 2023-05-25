@@ -11,7 +11,7 @@ module.exports = {
         lexend: ['Lexend', 'sans-serif'],
       },
       colors: {
-        'primary-orange': '#F24333',
+        'unite-orange': '#F24333',
       }
     },
   },
