@@ -6,9 +6,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useRouter } from 'next/navigation';
 
 const Form = () => {
 
+    const router = useRouter();
+    
     const { data: session } = useSession();
     const [providers, setProviders] = useState(null);  
   useEffect(() => {
@@ -27,11 +30,12 @@ const Form = () => {
                 height={30}
             />
             {session?.user ? (
+                router.push('/Home')
                 //aqui estaria um código pra redirecionar diretamente pro home da unite, só que eu n sei fazer isso
                 //e ainda não tem a página home pronta.
-                <button type='button' onClick={signOut}>
-                    Sign Out
-                </button>
+                // <button type='button' onClick={signOut}>
+                //     Sign Out
+                // </button>
                 //esse botão é placeholder, ele não estará no resultado final.
             ) : (
                 <>
