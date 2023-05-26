@@ -6,21 +6,22 @@ export const metadata = {
     description: "Home"
 }
 
-const RootLayout = ({ children }) => {
+const HomeLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
             <Provider>
                 <div className="HomePage">
+                    
                 </div>
 
-                <main className="app">
+                <div className="app dark:bg-neutral-900 ease-out duration-200">
                     {children}
-                </main>
+                </div>
             </Provider>
         </body>
     </html>
   )
 }
 
-export default RootLayout
+export default HomeLayout

@@ -1,9 +1,14 @@
-import Form from '@components/Form';
+'use client';
 
-const Home = () => {
+import Register from '@components/Register';
+import { ThemeProvider } from 'next-themes';
+
+const LoginPage = () => {
   return (
-      <Form></Form>
+    <ThemeProvider enableSystem={true} attribute='class'>
+      <Register/>
+    </ThemeProvider>
   )
 }
 
-export default Home
+export default LoginPage

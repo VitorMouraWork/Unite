@@ -5,6 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -14,6 +15,9 @@ module.exports = {
         'unite-orange': '#F24333',
       }
     },
+  },
+  variants: {
+    extend: {}
   },
   plugins: [],
 }

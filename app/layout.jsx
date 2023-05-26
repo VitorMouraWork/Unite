@@ -14,7 +14,7 @@ const RootLayout = ({ children }) => {
                 <div className="main">
                 </div>
 
-                <main className="app">
+                <main className="app h-full">
                     {children}
                 </main>
             </Provider>
