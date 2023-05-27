@@ -42,7 +42,7 @@ const MainNav = () => {
                 <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Units.svg" className='mr-2'></img>Units</a>
                 <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Notifications.svg" className='mr-2'></img>Notificações</a>
                 <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Options.svg" className='mr-2'></img>Opções</a>
-                <a class="ease-out duration-200 text-neutral-600 text-amber-400 hover:text-unite-orange flex mb-3"><img src="/assets/icons/Pro.svg" className='mr-3 ml-1'></img>Unite Pro</a>
+                <a class="ease-out duration-200 text-amber-400 hover:text-unite-orange flex mb-3"><img src="/assets/icons/Pro.svg" className='mr-3 ml-1'></img>Unite Pro</a>
             </div>
         </div>
     )

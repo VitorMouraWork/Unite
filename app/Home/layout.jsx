@@ -11,7 +11,7 @@ const HomeLayout = ({ children }) => {
     <html lang="en">
         <body>
             <Provider>
-                <div className="HomePage">
+                <div className="HomePage dark:bg-neutral-900">
                     
                 </div>
 

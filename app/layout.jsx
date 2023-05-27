@@ -11,10 +11,10 @@ const RootLayout = ({ children }) => {
     <html lang="en">
         <body>
             <Provider>
-                <div className="main">
+                <div className="main dark:bg-neutral-900">
                 </div>
 
-                <main className="app h-full">
+                <main className="app h-full dark:bg-neutral-900">
                     {children}
                 </main>
             </Provider>
