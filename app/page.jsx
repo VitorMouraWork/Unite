@@ -1,14 +1,26 @@
 'use client';
 
-import Register from '@components/Register';
-import { ThemeProvider } from 'next-themes';
+import MainNav from '@components/Widgets/MainNav';
+import SubNav from '@components/Widgets/SubNav';
+import NavProfile from '@components/Widgets/NavProfile';
+import Main from '@components/Main';
+import PostWidget from '../../components/Widgets/PostWidget';
 
-const LoginPage = () => {
+const Home = () => {
+
   return (
-    <ThemeProvider enableSystem={true} attribute='class'>
-      <Register/>
-    </ThemeProvider>
+    <div className="flex">
+      <div className='flex flex-col space-y-2'>
+        <MainNav></MainNav>
+        <SubNav></SubNav>
+        <NavProfile/>
+      </div>
+      <Main>
+        <PostWidget/>
+      </Main>
+    </div>
+
   )
 }
 
-export default LoginPage
+export default Home
