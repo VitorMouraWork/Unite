@@ -15,11 +15,11 @@ const NavProfile = () => {
     await router.push("/");
   };
 
-  useEffect(() => {
-    if (!session && !loading) {
-      router.push("/");
-    }
-  }, [session, router, loading]);
+  // useEffect(() => {
+  //   // if (!session && !loading) {
+  //   //   router.push("/");
+  //   // }
+  // }, [session, router, loading]);
 
   if (!session) {
     return null; // or render a loading indicator

@@ -1,14 +1,14 @@
 'use client';
 
-import Register from '@components/LandingPage';
+import Register from '@components/Register';
 import { ThemeProvider } from 'next-themes';
 
-const LandingPage = () => {
+const LoginPage = () => {
   return (
     <ThemeProvider enableSystem={true} attribute='class'>
-      <LandingPage/>
+      <Register/>
     </ThemeProvider>
   )
 }
 
-export default LandingPage
+export default LoginPage

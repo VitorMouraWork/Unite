@@ -2,8 +2,8 @@ import '@styles/globals.css';
 import Provider from '@components/Provider';
 
 export const metadata = {
-    title: "Unite",
-    description: "Discover like-minded people to work with"
+    title: "Login",
+    description: "Log in or Create an account to join the movement."
 }
 
 const RootLayout = ({ children }) => {
@@ -11,6 +11,9 @@ const RootLayout = ({ children }) => {
     <html lang="en">
         <body>
             <Provider>
+                <div className="main dark:bg-neutral-900">
+                </div>
+
                 <main className="app h-full dark:bg-neutral-900">
                     {children}
                 </main>
