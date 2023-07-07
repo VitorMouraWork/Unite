@@ -38,7 +38,7 @@ const Register = () => {
               <button
                 type="button"
                 onClick={() => handleSignIn(provider.id)}
-                className="flex bg-white dark:bg-neutral-800 items-center justify-center rounded-full p-2 px-6 flex-inline border border-neutral-600 text-neutral-600"
+                className="flex bg-white items-center justify-center rounded-full p-2 px-6 flex-inline border border-neutral-600 text-neutral-600"
               >
                 <Image
                   src="/assets/icons/Google.svg"
