@@ -1,5 +1,4 @@
 import '@styles/globals.css';
-import Provider from '@components/Provider';
 
 export const metadata = {
     title: "Unite",
@@ -10,11 +9,9 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
-            <Provider>
-                <main className="app h-full dark:bg-neutral-900">
+                <div className="h-full">
                     {children}
-                </main>
-            </Provider>
+                </div>
         </body>
     </html>
   )
