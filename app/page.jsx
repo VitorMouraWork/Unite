@@ -48,98 +48,62 @@ const LandingPage = () => {
             <p className="text4">Em nosso aplicativo, oferecemos um ambiente propício para que você descubra oportunidades únicas e se conecte diretamente com os principais líderes e influenciadores da sua área.</p>
         </div>
 
-        <div className="flex w-2/4">
-          <div className="Perfil">
-            <div className="flex">
-              <Image 
+        <div className=" grid grid-cols-2 p-16">
+          <div className="border-2 ease-in-out duration-200 hover:scale-105 bg-white/[.10] m-5 box-content h-44 w-50 p-4 border-4 rounded-md">
+            <div className="flex items-center space-x-5">
+              <Image
                 src="/assets/icons/profile-lp.svg"
                 alt="profile"
                 width={80}
                 height={80}
+                
               />
-              <p className="titulo1">Perfis profissionais</p>
+              <p className="titulo1" class="text-3xl">Perfis profissionais</p>
             </div>
-            <p className="text5">Crie um perfil profissional completo com experiência, habilidades e informações relevantes.</p>
+            <p className="text5" class="pt-10 pb-6">Crie um perfil profissional completo com experiência, habilidades e informações relevantes.</p>
           </div>
 
-          <div className="Rede">
-            <div className="fundo2"></div>
-            <Image src={""} />
-            <p className="titulo2">Rede de conexões</p>
+          <div className="border-2 ease-in-out duration-200 hover:scale-105 bg-white/[.10] m-5 box-content h-44 w-50 p-4 border-4 rounded-md">
+            <div className="flex items-center space-x-5">
+              <Image 
+                src={"/assets/icons/wifi.svg"} 
+                alt="profile"
+                width={80}
+                height={80}
+              />
+              <p className="text-3xl">Rede de conexões</p>
+            </div>
             <p className="text6">Conecte-se com profissionais e expanda sua rede de contatos de forma gratuita.</p>
           </div>
 
-          <div className="Feed">
-            <div className="fundo3"></div>
-            <Image src={""} />
-            <p className="titulo3">Feed de notícias</p>
+          <div className="border-2 ease-in-out duration-200 hover:scale-105 bg-white/[.10] m-5 box-content h-44 w-50 p-4 border-4 rounded-md">
+            <div className="flex items-center space-x-5">
+              <Image 
+                src={"/assets/icons/feed.svg"} 
+                alt="profile"
+                width={80}
+                height={80}
+              />
+              <p className="text-3xl">Feed de notícias</p>
+            </div>
             <p className="text7">Mantenha-se atualizado com as últimas novidades, atualizações e publicações dos seus contatos.</p>
           </div>
 
-          <div className="Post">
-            <div className="fundo4"></div>
-            <Image src={""} />
-            <p className="titulo4">Posts e compartilhamentos</p>
+          <div className="border-2 ease-in-out duration-200 hover:scale-105 bg-white/[.10] m-5 box-content h-44 w-50 p-4 border-4 rounded-md">
+            <div className="flex items-center space-x-5">
+              <Image 
+                src={"/assets/icons/chat.svg"} 
+                alt="profile"
+                width={80}
+                height={80}
+              />
+              <p className="text-3xl">Posts e compartilhamentos</p>
+            </div>
             <p className="text8">Compartilhe conteúdo relevante, artigos e atualizações profissionais com sua rede.</p>
           </div>
         </div>
       </div>
 
-      <div id="3parte"> {/* 3 PARTE */}
-        <Image src={""} />
-        <Image src={""} />
-
-        <div className="Free">
-          <div className="fundofree"></div>
-          <p className="text9">Unite Basic</p>
-          <p className="text10">Free</p>
-          <p className="text11">Plano gratuito</p>
-
-          <img src="" alt="check1" />
-          <p className="text12">Perfis profissionais</p>
-          <img src="" alt="check2" />
-          <p className="text13">Rede de conexões</p>
-          <img src="" alt="check3" />
-          <p className="text14">Feed de notícias</p>
-          <img src="" alt="check4" />
-          <p className="text15">Posts e Compartilhamentos</p>
-          <img src="" alt="check5" />
-          <p className="text16">Recursos de descoberta</p>
-
-          <button className="btn2">Download</button>
-        </div>
-
-        <div className="pro">
-          <div className="fundopro"></div>
-          <p className="text17">Unite Premium</p>
-          <p className="text18">R$ 30,90</p>
-          <p className="text19">por mês</p>
-
-          <img src="" alt="" />
-          <p className="text20"></p>
-          <img src="" alt="" />
-          <p className="text21"></p>
-          <img src="" alt="" />
-          <p className="text22"></p>
-          <img src="" alt="" />
-          <p className="text23"></p>
-          <img src="" alt="" />
-          <p className="text24"></p>
-          <img src="" alt="" />
-          <p className="text25"></p>
-
-          <button className="btn3">Comprar Plano</button>
-        </div>
-
-      </div>
-
-      <div id="4parte"> {/* 4 PARTE */}
-        <p className="text26">Baixe a Unite em seu dispositivo!</p>
-        <p className="text27">A Unite esta disponivel tanto para dispositivos Android quanto para IOS. Baixe já!</p>
-
-        <img src="" alt="" />
-        <img src="" alt="" />
-      </div>
 
       <div id="rodape" className="flex space-x-20 w-full p-14 bg-neutral-200 mt-20"> {/* RODAPÉ */}
 
@@ -151,6 +115,7 @@ const LandingPage = () => {
         height={30}
       />
         <p className="text28">A Unite foi desenvolvida dentro de um trabalho em grupo da matéria de PIT no Colégio Cotemig.</p>
+        <p>Design by Sofia & Vitor D.</p>
       </div>
 
       <div className="flex flex-col gap-4 w-1/4">
