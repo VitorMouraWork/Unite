@@ -13,10 +13,7 @@ const RootLayout = ({ children }) => {
             <Provider>
                 <div className="main dark:bg-neutral-900">
                 </div>
-
-                <main className="app h-full">
                     {children}
-                </main>
             </Provider>
         </body>
     </html>

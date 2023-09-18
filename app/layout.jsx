@@ -9,9 +9,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
-                <div className="h-full">
-                    {children}
-                </div>
+            {children}
         </body>
     </html>
   )
