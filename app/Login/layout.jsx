@@ -14,6 +14,7 @@ const RootLayout = ({ children }) => {
                 <div className="main dark:bg-neutral-900">
                 </div>
                     {children}
+                    <div className='bgUnite'></div>
             </Provider>
         </body>
     </html>
