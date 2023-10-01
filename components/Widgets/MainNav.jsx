@@ -38,11 +38,21 @@ const MainNav = () => {
                 
             </div>
             <div class="flex flex-col cursor-pointer">
-                <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Home.svg" className='mr-2'></img>Página Inicial</a>
-                <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Units.svg" className='mr-2'></img>Units</a>
-                <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Notifications.svg" className='mr-2'></img>Notificações</a>
-                <a class="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex"><img src="/assets/icons/Options.svg" className='mr-2'></img>Opções</a>
-                <a class="ease-out duration-200 text-amber-400 hover:text-unite-orange flex mb-3"><img src="/assets/icons/Pro.svg" className='mr-3 ml-1'></img>Unite Pro</a>
+            <Link href={'/Home'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
+                <img src="/assets/icons/Home.svg" className='mr-2'></img>Página Inicial
+            </Link>
+            <Link href={'/Units'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
+                <img src="/assets/icons/Units.svg" className='mr-2'></img>Units
+            </Link>
+            <Link href={'/Notifications'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
+                <img src="/assets/icons/Notifications.svg" className='mr-2'></img>Notificações
+            </Link>
+            <Link href={'/Config'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
+                <img src="/assets/icons/Options.svg" className='mr-2'></img>Opções
+            </Link>
+            <Link href={'/UnitePro'} className="ease-out duration-200 text-amber-400 hover:text-unite-orange mb-3 flex">
+                <img src="/assets/icons/Pro.svg" className='mr-3 ml-1'></img>Unite Pro
+            </Link>
             </div>
         </div>
     )
