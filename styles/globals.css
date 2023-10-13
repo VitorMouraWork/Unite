@@ -71,8 +71,30 @@ ThemeProvider {
   height: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin: 2px;
+  border-radius: 10px;
+}
+ 
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #919191; 
+}
+
 /* Tailwind Styles */
 
  .app {
   @apply relative z-10 flex py-10 ;
 } 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-400 dark:bg-neutral-700 rounded-full ;
+}
