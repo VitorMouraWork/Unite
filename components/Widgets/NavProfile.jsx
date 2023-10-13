@@ -45,14 +45,14 @@ promise.then(function (response) {
            height={35}
            className="rounded-full m-1"
          />
-         {/* <div className="flex flex-col">
+          <div className="flex flex-col">
            <p className="ease-out duration-200 hover:text-unite-orange text-neutral-600 dark:text-neutral-400">
-             {session.user?.name || "Nickname"}
+             {account.$id || "Nickname"}
            </p>
            <p className="text-xs text-neutral-400 dark:text-neutral-600 leading-3">
-             @{session.user?.name || "Username"}
+             @{account.$id || "Username"}
            </p>
-         </div> */}
+         </div> 
        </div>
 
         <button onClick={handleSignOut} href="/">

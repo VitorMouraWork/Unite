@@ -3,8 +3,18 @@
 import MainNav from '@components/Widgets/MainNav';
 import SubNav from '@components/Widgets/SubNav';
 import NavProfile from '@components/Widgets/NavProfile';
+import { Client, Account } from "appwrite";
 
 const Config = () => {
+
+  const client = new Client();
+  const account = new Account(client);
+  
+  client
+      .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+      .setProject('6527f8f1124d9905ddda') // Your project ID
+  ;
+  
 
   const UpdateDisplayName = () => {
     //código de mudar o nome do usuário aqui 
@@ -17,9 +27,14 @@ const Config = () => {
   };  
 
   const UpdatePassword = () => {
-    //código de atualizar senha aqui 
-    //é nesta página aqui que o "U" do "CRUD" (vulgo Update) (Atualizar em inglês) acontece.
+      //código de atualizar senha aqui 
+      //é nesta página aqui que o "U" do "CRUD" (vulgo Update) (Atualizar em inglês) acontece.
   };  
+
+  const UpdateEmail = () => {
+    //código de deletar conta aqui 
+    //é nesta página aqui que o "D" do "CRUD" (vulgo delete) (deletar em inglês) acontece.
+  };
 
   const deleteAccount = () => {
     //código de deletar conta aqui 
@@ -43,6 +58,8 @@ const Config = () => {
         <a href="#" className="text-neutral-600 hover:text-neutral-400 text-x ease-out duration-100" onClick={UpdateName}> Trocar o @ da conta </a>
           <hr className='border-neutral-200 dark:border-neutral-700 my-2'/>
         <a href="#" className="text-neutral-600 hover:text-neutral-400 text-x ease-out duration-100" onClick={UpdatePassword}> Trocar minha senha </a>
+          <hr className='border-neutral-200 dark:border-neutral-700 my-2'/>
+          <a href="#" className="text-neutral-600 hover:text-neutral-400 text-x ease-out duration-100" onClick={UpdateEmail}> Trocar de Email </a>
           <hr className='border-neutral-200 dark:border-neutral-700 my-2'/>
         <a href="#" className=" text-red-600 dark:text-red-800 hover:text-red-500 text-x ease-out duration-100" onClick={deleteAccount}> Deletar Conta </a>
           <hr className='border-neutral-200 dark:border-neutral-700 my-2'/>

@@ -7,7 +7,7 @@ const LoginPage = () => {
 
   return (
     <ThemeProvider enableSystem={true} attribute='class'>
-      <div className=' w-full h-full items-center align-items-center justify-center'>
+      <div className=' w-full h-full justify-end p-96 flex flex-end'>
         <Register/>
       </div>
     </ThemeProvider>

@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { Databases, Client, Account } from 'appwrite';
 
-const PostWidget = () => {
+const PostWidget = ({posts}) => {
   return (
     <div className='flex flex-start w-4/5 items-start my-2'>
       <Image
