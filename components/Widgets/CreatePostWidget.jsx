@@ -1,7 +1,7 @@
 "use client";
 
 import '@styles/globals.css';
-import { Databases, Client } from 'appwrite';
+import { Databases, Client, ID } from 'appwrite';
 import { useState } from 'react';
 
 const CreatePostWidget = () => {
@@ -16,15 +16,18 @@ const CreatePostWidget = () => {
             .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
             .setProject('6527f8f1124d9905ddda') // Your project ID
         ;
-        const response = databases.createDocument(
-            process.env.NEXT_PUBLIC_DATABASE,
-            process.env.NEXT_PUBLIC_POSTS_COLLECTION,
-            "uniqueID",
+
+        const response = await databases.createDocument(
+            process.env.NEXT_PUBLIC_DATABASE, // Your database ID
+            process.env.NEXT_PUBLIC_POSTS_COLLECTION, // Your collection ID
+            ID.unique(), // A unique ID for the post
             {
                 text: post,
             }
-        )
-    }
+        );
+
+        setPost('');
+    };
 
     return (
         <div class="flex rounded-xl dark:border-neutral-800 flex items-center ease-out duration-200 w-4/5 py-2 sticky z-3 mb-3">

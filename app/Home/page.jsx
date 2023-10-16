@@ -13,7 +13,25 @@ import '@styles/globals.css';
 const Home = (posts) => {
 console.log(posts)
 
+const unitePosts = (post) => []
 
+const client = new Client();
+const databases = new Databases(client);
+
+client
+  .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+  .setProject('6527f8f1124d9905ddda') // Your project ID
+;
+
+//list posts
+const promise = databases.listDocuments('6528054a4edf5344e551', '6528055a6fb9c77819ca');
+
+promise.then(function (response) {
+  console.log(response); // Success
+
+}, function (error) {
+  console.log(error); // Failure
+});
 
   return (
     <div className="flex space-x-2 place-content-center w-full">
@@ -24,26 +42,17 @@ console.log(posts)
       </div>
       <div className='p-3 flex bg-white dark:bg-neutral-800 rounded-xl w-5/12 flex-col items-center ease-out duration-200 py-2 overflow-y-scroll container'>
         <CreatePostWidget/>
-        {/* <div>
+         {/* <div>
           <h2>Tweets</h2>
-          {posts.documents.map((post) => (
+          {response.map((post) => (
             <div key={post.$id}>
               <h3>{post.text}</h3>
               <p>{post.createdAt}</p>
             </div>)
             )}
-        </div> */}
+        </div>  */}
         <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
-        <PostWidget/>
+
       </div>
       <div className='TAGS flex flex-col space-y-2 justify-items-center'>
         <TagWidget/>
@@ -54,25 +63,3 @@ console.log(posts)
 }
 
 export default Home
-
-async function getServerSideProps(context) {
-  const client = new Client();
-  const account = new Account(client);
-
-  client
-      .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-      .setProject('6527f8f1124d9905ddda') // Your project ID
-  ;
-
-  const databases = new Databases(client);
-
-  const posts = await databases.listDocuments(
-    process.env.NEXT_PUBLIC_DATABASE,
-    process.env.NEXT_PUBLIC_POSTS_COLLECTION
-  );
-
-  return {
-    props: {posts},
-  };
-}
-

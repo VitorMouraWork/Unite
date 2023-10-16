@@ -11,8 +11,11 @@ const Register = () => {
  const [isSignUp, setIsSignUp] = useState(false);
  const [createEmail, setCreateEmail] = useState("");
  const [createName, setCreateName] = useState("");
+ const [createNickname, setCreateNickname] = useState("");
  const [createPassword, setCreatePassword] = useState("");
  const [confirmPassword, setConfirmPassword] = useState("");
+ const [errorMessage, setErrorMessage] = useState("");
+
 
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
@@ -33,6 +36,7 @@ client
     router.push("/Home")
   }, function (error) {
     console.log(error); //falha
+    setErrorMessage(error.message);
   });
 }, []);
 
@@ -44,7 +48,7 @@ client
     router.push("/Home");
   }, function (error) {
     console.log(error); //failure
-    //mensagem de erro de login aqui
+    setErrorMessage(error.message); //mensagem de erro de login aqui
   })
 };
 
@@ -70,7 +74,7 @@ const handleGoogleSignIn = () => {
       router.push('/Home');
   }, function (error) {
       console.log(error); // Failure
-      //mensagem de erro aqui
+      setErrorMessage(error.message);
   });
 };
 
@@ -118,8 +122,10 @@ const handleGoogleSignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <a href="" className="text-xs text-unite-orange">esqueceu sua senha?</a>
+              {errorMessage && <p className="text-xs text-rose-600 w-64">{errorMessage}</p>}
 
+              <a href="" className="text-xs text-unite-orange">esqueceu sua senha?</a>
+              
               <button className="text-white bg-unite-orange mt-6 rounded-full p-1 mb-12" onClick={handleSignIn}>Login</button>
 
             <p className="text-xs text-neutral-600 self-center">
@@ -145,8 +151,8 @@ const handleGoogleSignIn = () => {
             <input
               placeholder="Nome"
               required
-              value={createName}
-              onChange={(e) => setCreateName(e.target.value)}
+              value={createName && createNickname}
+              onChange={(e) => setCreateName(e.target.value) && setCreateNickname(e.target.value)}
               className="bg-white rounded-md p-2 px-6 border border-neutral-200 text-neutral-600"
             />
 
@@ -169,6 +175,8 @@ const handleGoogleSignIn = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="bg-white rounded-md p-2 px-6 border border-neutral-200 text-neutral-600"
             />
+            
+            {errorMessage && <p className="text-xs text-rose-600 w-64">{errorMessage}</p>}
 
             <button
               onClick={handleSignUp}
