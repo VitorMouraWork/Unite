@@ -53,7 +53,7 @@ promise.then(function (response) {
         </div>  */}
         <PostWidget/>
 
-      </div>
+      </div> 
       <div className='TAGS flex flex-col space-y-2 justify-items-center'>
         <TagWidget/>
       </div>
