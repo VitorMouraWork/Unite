@@ -25,14 +25,20 @@ const NavProfile = () => {
   };
 
 
+//set user
+const [username, setUsername] = useState(null);
+const [nickname, setNickname] = useState(null);
+
+
 const promise = account.get();
 
 promise.then(function (response) {
-    console.log(response); // Success
+  console.log(response);
+  setUsername(response.$id)
+  setNickname(response.name)
 }, function (error) {
-    console.log(error); // Failure
-    return null; // or render a loading indicator
-});
+  console.log(error)
+})
 
 
   return (
@@ -47,10 +53,10 @@ promise.then(function (response) {
          />
           <div className="flex flex-col">
            <p className="ease-out duration-200 hover:text-unite-orange text-neutral-600 dark:text-neutral-400">
-             {account.$id || "Nickname"}
+             {nickname || "Nickname"}
            </p>
            <p className="text-xs text-neutral-400 dark:text-neutral-600 leading-3">
-             @{account.$id || "Username"}
+             @{username || "Username"}
            </p>
          </div> 
        </div>

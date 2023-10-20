@@ -64,7 +64,7 @@ const handleGoogleSignIn = () => {
 
  // Função para manipular o envio do formulário de inscrição
  const handleSignUp = () => {
-  const promise = account.create(createName, createEmail, createPassword);
+  const promise = account.create(createName, createEmail, createPassword, createNickname);
 
   promise.then(function (response) {
       console.log(response); // Success
@@ -151,8 +151,11 @@ const handleGoogleSignIn = () => {
             <input
               placeholder="Nome"
               required
-              value={createName && createNickname}
-              onChange={(e) => setCreateName(e.target.value) && setCreateNickname(e.target.value)}
+              value={createName}
+              onChange={(e) => {
+                setCreateName(e.target.value);
+                setCreateNickname(e.target.value);
+              }}
               className="bg-white rounded-md p-2 px-6 border border-neutral-200 text-neutral-600"
             />
 

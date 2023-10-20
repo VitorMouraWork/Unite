@@ -6,16 +6,16 @@ import NavProfile from '@components/Widgets/NavProfile';
 import TagWidget from '@components/Widgets/TagWidget';
 import CreatePostWidget from '@components/Widgets/CreatePostWidget';
 import PostWidget from '@components/Widgets/PostWidget';
-import { Databases, Client } from 'appwrite';
+import { Databases, Client, Account } from 'appwrite';
 
 import '@styles/globals.css';
+import { useState } from 'react';
 
-const Home = (posts) => {
+const Home = ({posts}) => {
 console.log(posts)
 
-const unitePosts = (post) => []
-
 const client = new Client();
+const account = new Account();
 const databases = new Databases(client);
 
 client
@@ -23,11 +23,22 @@ client
   .setProject('6527f8f1124d9905ddda') // Your project ID
 ;
 
-//list posts
-const promise = databases.listDocuments('6528054a4edf5344e551', '6528055a6fb9c77819ca');
+//set user
+const [user, setUser] = useState(null);
 
-promise.then(function (response) {
-  console.log(response); // Success
+const UnitePosts = []
+
+const getAccount = account.get();
+getAccount.then(function (response) {
+  setUser(response.username)
+})
+
+//list posts
+const listPosts = databases.listDocuments('6528054a4edf5344e551', '6528055a6fb9c77819ca');
+
+listPosts.then(function (response) {
+  console.log(response);
+  // return new UnitePosts.push(response)
 
 }, function (error) {
   console.log(error); // Failure
@@ -42,16 +53,7 @@ promise.then(function (response) {
       </div>
       <div className='p-3 flex bg-white dark:bg-neutral-800 rounded-xl w-5/12 flex-col items-center ease-out duration-200 py-2 overflow-y-scroll container'>
         <CreatePostWidget/>
-         {/* <div>
-          <h2>Tweets</h2>
-          {response.map((post) => (
-            <div key={post.$id}>
-              <h3>{post.text}</h3>
-              <p>{post.createdAt}</p>
-            </div>)
-            )}
-        </div>  */}
-        <PostWidget/>
+        <PostWidget posts={posts} />
 
       </div> 
       <div className='TAGS flex flex-col space-y-2 justify-items-center'>

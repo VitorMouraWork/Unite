@@ -4,8 +4,7 @@ import { Databases, Functions, Client } from 'appwrite';
 import appwriteClient from '@/libs/appwrite';
 
 const PostWidget = ({ post, onPostRemoved, onLikePostCallback }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
   const onRemovePost = async () => {
 
     const client = new Client();
@@ -23,7 +22,6 @@ const PostWidget = ({ post, onPostRemoved, onLikePostCallback }) => {
       );
       onPostRemoved(post);
     } catch (error) {
-      setIsModalOpen(true);
     }
   };
 
@@ -43,6 +41,15 @@ const PostWidget = ({ post, onPostRemoved, onLikePostCallback }) => {
       console.log(error);
     }
   };
+
+    // // Obter o texto do post do banco de dados
+    // const postText = Databases.getDocument(
+    //   process.env.NEXT_PUBLIC_DATABASE, // Your database ID
+    //   process.env.NEXT_PUBLIC_POSTS_COLLECTION, // Your collection ID
+    //   post.$id,
+    //   'text'
+    // );
+  
   return (
     <div className='flex flex-start w-4/5 items-start my-2'>
       <Image
@@ -98,6 +105,7 @@ const PostWidget = ({ post, onPostRemoved, onLikePostCallback }) => {
 
 export default PostWidget;
 
+// estes códigos comentados abaixo são a forma que o banco de dados lê os documentos do post
 // {post.username}{' '}
 // {post.text}
 // {post.likes}

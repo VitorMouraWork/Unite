@@ -1,16 +1,36 @@
 "use client";
 
 import '@styles/globals.css';
-import { Databases, Client, ID } from 'appwrite';
+import { Databases, Client, ID, Account } from 'appwrite';
 import { useState } from 'react';
 
 const CreatePostWidget = () => {
 
     const [post, setPost] = useState("");
+    const [username, setUsername] = useState(null);
+    const [nickname, setNickname] = useState(null);
 
+    const client = new Client();
+    const account = new Account(client);
+    const databases = new Databases(client);
+
+    const promise = account.get();
+
+        promise.then(function (response) {
+        console.log(response);
+        setUsername(response.$id)
+        setNickname(response.name)
+
+        console.log(response.$id)
+        
+        }, function (error) {
+        console.log(error)
+
+
+        })
     const createPost = async () => {
-        const client = new Client();
-        const databases = new Databases(client);
+    
+        
 
         client
             .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
@@ -23,6 +43,8 @@ const CreatePostWidget = () => {
             ID.unique(), // A unique ID for the post
             {
                 text: post,
+                username: username,
+                nickname: nickname,
             }
         );
 
