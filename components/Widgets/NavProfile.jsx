@@ -51,7 +51,7 @@ promise.then(function (response) {
            height={35}
            className="rounded-full m-1"
          />
-          <div className="flex flex-col">
+          <div className="flex flex-col grow">
            <p className="ease-out duration-200 hover:text-unite-orange text-neutral-600 dark:text-neutral-400">
              {nickname || "Nickname"}
            </p>

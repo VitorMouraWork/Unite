@@ -15,6 +15,10 @@ const Saves = () => {
       </div>
       <div className='p-3 flex bg-white dark:bg-neutral-800 rounded-xl w-5/12 flex-col ease-out duration-200 px-5 py-2'>
         <h1 className='text-xl mb-5  self-center text-neutral-400'>Salvos</h1>
+
+
+      
+
       </div>
     </div>
 

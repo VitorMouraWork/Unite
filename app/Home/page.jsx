@@ -6,6 +6,7 @@ import NavProfile from '@components/Widgets/NavProfile';
 import TagWidget from '@components/Widgets/TagWidget';
 import CreatePostWidget from '@components/Widgets/CreatePostWidget';
 import PostWidget from '@components/Widgets/PostWidget';
+import Image from 'next/image';
 import { Databases, Client, Account } from 'appwrite';
 
 import '@styles/globals.css';
@@ -53,7 +54,9 @@ listPosts.then(function (response) {
       </div>
       <div className='p-3 flex bg-white dark:bg-neutral-800 rounded-xl w-5/12 flex-col items-center ease-out duration-200 py-2 overflow-y-scroll container'>
         <CreatePostWidget/>
-        <PostWidget posts={posts} />
+
+<PostWidget posts={posts} />
+
 
       </div> 
       <div className='TAGS flex flex-col space-y-2 justify-items-center'>

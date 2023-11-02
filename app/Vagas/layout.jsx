@@ -2,16 +2,16 @@ import '@styles/globals.css';
 import Provider from '@components/Provider';
 
 export const metadata = {
-    title: "Notificações",
+    title: "Vagas",
     description: "Unite"
 }
 
-const NotificationsLayout = ({ children }) => {
+const VagasLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
             <Provider>
-                <div className="app dark:bg-neutral-900 ease-out duration-200 h-full w-full">
+                <div className="app dark:bg-neutral-900 ease-out duration-200 overflow-hidden h-full w-full">
                     {children}
                 </div>
             </Provider>
@@ -20,4 +20,4 @@ const NotificationsLayout = ({ children }) => {
   )
 }
 
-export default NotificationsLayout
+export default VagasLayout
