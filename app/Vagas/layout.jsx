@@ -2,11 +2,11 @@ import '@styles/globals.css';
 import Provider from '@components/Provider';
 
 export const metadata = {
-    title: "Mensagens",
+    title: "Vagas",
     description: "Unite"
 }
 
-const MessagesLayout = ({ children }) => {
+const VagasLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
@@ -20,4 +20,4 @@ const MessagesLayout = ({ children }) => {
   )
 }
 
-export default MessagesLayout
+export default VagasLayout

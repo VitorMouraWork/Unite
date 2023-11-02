@@ -44,8 +44,8 @@ const MainNav = () => {
             <Link href={'/Units'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
                 <img src="/assets/icons/Units.svg" className='mr-2'></img>Units
             </Link>
-            <Link href={'/Notifications'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
-                <img src="/assets/icons/Notifications.svg" className='mr-2'></img>Notificações
+            <Link href={'/Vagas'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
+                <img src="/assets/icons/Notifications.svg" className='mr-2'></img>Vagas
             </Link>
             <Link href={'/Config'} className="ease-out duration-200 text-neutral-600 hover:text-unite-orange flex">
                 <img src="/assets/icons/Options.svg" className='mr-2'></img>Opções
